@@ -22,6 +22,7 @@
             background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
         }
         h1, h2 {
             text-align: center;
@@ -29,6 +30,7 @@
         }
         p {
             text-align: justify;
+            margin-bottom: 20px;
         }
         .footer {
             text-align: center;
@@ -43,6 +45,48 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             animation: floatImage 5s infinite ease-in-out alternate; /* Example animation */
         }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        .popup-content {
+            text-align: center;
+        }
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #666;
+        }
+        .side-decoration {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+        .side-decoration a {
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
         @keyframes floatImage {
             0% {
                 transform: translateY(0);
@@ -54,20 +98,29 @@
                 transform: translateY(0);
             }
         }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <img src="vivekanandaji.jpg" alt="Swami Vivekananda" class="header-image">
+        <img src="vivekanandaji2.jpeg" alt="Swami Vivekananda" class="header-image">
         <h1>Swami Vivekananda: A Beacon of Spiritual Wisdom</h1>
         <p>Welcome to Akshat's blog dedicated to exploring the life, teachings, and impact of Swami Vivekananda.</p>
     </header>
     
     <main>
-       <p><b>Who was Swami Vivekananda?</b></p>
-
+        <article>
+            <h2>Who was Swami Vivekananda?</h2>
+            
 <p>In the chronicles of ancient Indian history, there have existed countless rishis and Swamis, millions of teachers and gurus, and even more sages, priests, and scholars. So who exactly was Swami Vivekananda, and what set him apart in changing the mindset of the people of India for hundreds of years to come.</p>
 
 <p>Narendra Nath Datta was born in 1863 in Kolkata during a pivotal era &mdash; A time when the country was under British rule, facing immense challenges and revolts. This was a golden era of cultural renaissance and awakening for him and the people of India.</p>
@@ -115,12 +168,43 @@ Swami Vivekananda wrote this in a letter to Sister Nivedita in March 1900. On Ju
 <p>A man of such mental strength who once also said  &#96;&#96;&#96;<b>Darkness never existed, weakness never existed. We who are fools cry that we are weak. We who are fools cry that we are impure.&#96;&#96;&#96; - Swami Vivekananda.</b></p>
 
 <p>Hence, never forget: Life is the grand gymnasium, and you are both the athlete and the coach sculpting your strength and character.</p>
+
+            <p><a href="https://www.swamivivekananda.guru/" onclick="openPopup('popup1')">Read More</a></p>
+        </article>
+        
+        <!-- Example Popup -->
+        <div id="popup1" class="popup">
+            <div class="popup-content">
+                <span class="popup-close" onclick="closePopup('popup1')">Close</span>
+                <h2>Swami Vivekanandaji Home page</h2>
+            </div>
+        </div>
     </main>
     
     <footer class="footer">
         <p>&copy; 2024 Akshat Sharma. All rights reserved.</p>
     </footer>
 </div>
+
+<!-- Side Decoration -->
+<div class="side-decoration">
+</div>
+
+<script>
+    function openPopup(popupId) {
+        var popup = document.getElementById(popupId);
+        if (popup) {
+            popup.style.display = "block";
+        }
+    }
+
+    function closePopup(popupId) {
+        var popup = document.getElementById(popupId);
+        if (popup) {
+            popup.style.display = "none";
+        }
+    }
+</script>
 
 </body>
 </html>
