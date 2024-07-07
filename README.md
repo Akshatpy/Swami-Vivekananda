@@ -1,3 +1,5 @@
+A self-written blog based on the life of Swami Vivekananda. Published using Vercel.app
+
 ---
 name: HTML/CSS Project
 slug: html-starter-with-analytics
